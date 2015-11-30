@@ -38,6 +38,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.3)
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
     awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
@@ -46,6 +49,15 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.3.0)
+    bootstrap3-rails (3.2.0)
+      rails (>= 4.0.0)
+    bootstrap_form (2.3.0)
+    bootswatch-sass (3.3.5)
+      rails (>= 4.2.0)
+      sass-rails (~> 5.0)
     builder (3.2.2)
     byebug (8.2.1)
     capybara (2.5.0)
@@ -68,6 +80,8 @@ GEM
     docile (1.1.5)
     erubis (2.7.0)
     execjs (2.6.0)
+    font-awesome-rails (4.4.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -196,10 +210,15 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
+  bootstrap-sass (~> 3.3.5)
+  bootstrap3-rails
+  bootstrap_form
+  bootswatch-sass
   byebug
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
