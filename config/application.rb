@@ -19,17 +19,28 @@ module Final
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.default charset: 'utf-8'
+    # config.action_mailer.raise_delivery_errors = true
+    # config.action_mailer.delivery_method = :smtp
+    # host = 'localhost:3000'
+    # config.action_mailer.default_url_options = { host: host }
+    # config.action_mailer.smtp_settings = {
+    #     address:              'smtp.sendgrid.net',
+    #     port:                 587,
+    #     domain:               'localhost:3000',
+    #     user_name:            'MaxMillington89',
+    #     password:             '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',
+    #     authentication:       'plain',
+    #     enable_starttls_auto: true
+    # }
 
-    config.action_mailer.smtp_settings = {
-        address: 'smtp.mandrillapp.com',
-        port: '587',
-        domain: 'localhost',
-        user_name: 'mmillingt@yahoo.com',
-        password: 'fnMRAzWNNLm5_2Sn3LaoRQ',
-        authentication: 'plain',
-        enable_startls_auto: true
-    }
+    # ActionMailer::Base.smtp_settings = {
+    #     :user_name => 'MaxMillington89',
+    #     :password => '0411Mary',
+    #     :domain => 'localhost:3000',
+    #     :address => 'smtp.sendgrid.net',
+    #     :port => 587,
+    #     :authentication => :plain,
+    #     :enable_starttls_auto => true
+    # }
   end
 end
