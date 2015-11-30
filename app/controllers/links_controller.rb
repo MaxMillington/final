@@ -5,7 +5,11 @@ class LinksController < ApplicationController
   end
 
   def index
-    @links = current_user.links
+    if current_user
+      @links = current_user.links
+    else
+      @links = []
+    end
     @link = Link.new
   end
 
