@@ -10,6 +10,10 @@ $(document).on('ready page:load', function() {
         $link.find(".btn-mark-as-unread").show();
     });
 
+});
+
+$(document).on('ready page:load', function() {
+
     $(".btn-mark-as-unread").on("ajax:success", function(event, data, status) {
         var $link = $("#"+data.id);
         $link.removeClass("link-read-true").addClass("link-read-false");
@@ -19,6 +23,7 @@ $(document).on('ready page:load', function() {
         $link.find(".btn-mark-as-read").show();
     });
 });
+
 
 //sort
 
