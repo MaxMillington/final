@@ -71,6 +71,7 @@
                 <th>Read</th>
                 <th>Change Status</th>
                 <th>Edit Link</th>
+                <th>Recommend</th>
               </tr>
               </thead>
               <tbody>
@@ -101,6 +102,7 @@
                       <% end %>
                     </td>
                     <td><%= link_to 'edit', edit_link_path(link.id) %></td>
+                    <td><%= link_to 'send link to friend', new_recommendation_path({id: link.id}) %>
                   </tr>
               <% end %>
               </tbody>

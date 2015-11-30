@@ -1,7 +1,7 @@
 //status
 
 $(document).on('ready page:load', function() {
-    $(".btn-mark-as-read").on("ajax:success", function(event, data, status, xhr) {
+    $(".btn-mark-as-read").on("ajax:success", function(event, data, status) {
         var $link = $("#"+data.id);
         $link.removeClass("link-read-false").addClass("link-read-true");
         $link.children(".title, .url").removeClass("read-false").addClass("read-true");
@@ -10,7 +10,7 @@ $(document).on('ready page:load', function() {
         $link.find(".btn-mark-as-unread").show();
     });
 
-    $(".btn-mark-as-unread").on("ajax:success", function(event, data, status, xhr) {
+    $(".btn-mark-as-unread").on("ajax:success", function(event, data, status) {
         var $link = $("#"+data.id);
         $link.removeClass("link-read-true").addClass("link-read-false");
         $link.children(".title, .url").removeClass("read-true").addClass("read-false");
