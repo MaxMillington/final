@@ -34,7 +34,7 @@ describe 'user edits a link' do
       fill_in 'link_title', with: 'dumb'
       fill_in 'link_url', with: 'dumb'
       click_button 'Submit'
-      
+
       expect(page).to have_content('You must enter a title and valid url')
     end
   end
