@@ -16,8 +16,9 @@ class RecommendationsController < ApplicationController
       flash.now[:danger] = 'Provide an email address.'
       redirect_to new_recommendation_path(link.id)
     else
+      # binding.pry
       email_info= { email: params[:email], link: link.url }
-      # NotificationsMailer.contact(email_info).deliver_now
+      NotificationsMailer.contact(email_info).deliver_now
       flash.keep[:success] = 'Email sent.'
       redirect_to links_path
     end

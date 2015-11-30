@@ -3,7 +3,8 @@ class NotificationsMailer < ApplicationMailer
     @email_info = email_info
     mail(
         to: @email_info[:email],
-        subject: "Check this link."
+        subject: "Check this link.",
+        body: "check it: #{@email_info[:link]}"
     )
   end
 end
