@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 //status
 
 $(document).on('ready page:load', function() {
@@ -28,14 +20,29 @@ $(document).on('ready page:load', function() {
     });
 });
 
+//sort
 
+$(document).on('ready page:load', function () {
 
+    $(".sort-btn").on("click", function() {
+        var $sort = this;
+        var $links = $('#links');
+        var $link = $(".link");
 
-
-
-
-
-
+        $link.sort(function(a, b) {
+            var first = $(a).find('.title').text().toLowerCase();
+            var second = $(b).find('title').text().toLowerCase();
+            if($($sort).hasClass('ascending')) {
+                return (first > second) ? 1 : 0;
+            } else {
+                return (first < second) ? 1 : 0;
+            }
+        });
+        $.each($link, function(index, element) {
+            $links.append(element);
+        });
+    });
+});
 
 //search
 
@@ -69,29 +76,4 @@ $(document).on('ready page:load', function () {
         $(".link").hide();
         $(".link-read-false").show();
     });
-});
-
-//sort
-
-$(document).on('ready page:load', function () {
-
-    $(".sort-btn").on("click", function() {
-        var $sort = this;
-        var $links = $('#links');
-        var $link = $(".link");
-
-        $link.sort(function(a, b) {
-            var ParamA = $(a).find('.title').text().toLowerCase();
-            var ParamB = $(b).find('title').text().toLowerCase();
-            if($($sort).hasClass('ascending')) {
-                return (ParamA > ParamB) ? 1 : 0;
-            } else {
-                return (ParamA < ParamB) ? 1 : 0;
-            }
-        });
-        $.each($link, function(index, element) {
-            $links.append(element);
-        });
-    });
-
 });

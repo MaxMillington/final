@@ -51,7 +51,7 @@
           <button id="btn-show-all">Show All</button>
           <button id="btn-show-read">Show Read Only</button>
           <button id="btn-show-unread">Show Unread Only</button>
-          <button class="sort-btn ascending">Sort Ascending</button>
+          <button class="sort-btn ascending">Sort</button>
 
           <br>
           <br>
@@ -81,30 +81,23 @@
                     <td class="read-status"><%= link.read %></td>
                     <td class="change-status">
                       <% if !link.read %>
-
                           <%= form_tag api_v1_link_path(link.id, {link: {title: link.title, url: link.url, read: true}}),
-                                       { class: 'btn-mark-as-read', method: :put, remote: true } do %>
+                                       { class: 'read-status-btn btn-mark-as-read', method: :put, remote: true } do %>
                               <%= submit_tag 'Mark as Read' %>
                           <% end %>
-
                           <%= form_tag api_v1_link_path(link.id, {link: {title: link.title, url: link.url, read: false}}),
-                                       { class: "btn-mark-as-unread hidden", method: :put, remote: true } do %>
+                                       { class: 'read-status-btn btn-mark-as-unread hidden', method: :put, remote: true } do %>
                               <%= submit_tag 'Mark as Unread' %>
                           <% end %>
-
                       <% else %>
-
                           <%= form_tag api_v1_link_path(link.id, {link: {title: link.title, url: link.url, read: false}}),
-                                       { class: 'btn-mark-as-unread', method: :put, remote: true } do %>
+                                       { class: 'read-status-btn btn-mark-as-unread', method: :put, remote: true } do %>
                               <%= submit_tag 'Mark as Unread' %>
                           <% end %>
-
                           <%= form_tag api_v1_link_path(link.id, {link: {title: link.title, url: link.url, read: true}}),
-                                       { class: "btn-mark-as-read hidden", method: :put, remote: true } do %>
+                                       { class: 'read-status-btn btn-mark-as-read hidden', method: :put, remote: true } do %>
                               <%= submit_tag 'Mark as Read' %>
                           <% end %>
-
-
                       <% end %>
                     </td>
                     <td><%= link_to 'edit', edit_link_path(link.id) %></td>
